@@ -1,0 +1,13 @@
+<template name="layout">
+    <div id="container">
+        <aside>
+            {{> yield "aside"}}
+        </aside>
+
+        {{> yield}}
+
+        <footer>
+            {{> yield "footer"}}
+        </footer>
+    </div>
+</template>

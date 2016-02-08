@@ -1,0 +1,19 @@
+<template name="category">
+  <div id="category-container">
+    {{> title text="商品分类"}}
+    <div class="container">
+      <div class="row">
+        {{#each categorys}}
+          <div class="col-xs-6 col-sm-4">
+            <div id="{{name}}" class="thumbnail">
+              <img src="{{url}}" alt="{{label}}">
+              <div class="caption">
+                <h3>{{label}}</h3>
+              </div>
+            </div>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</template>

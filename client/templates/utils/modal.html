@@ -1,0 +1,22 @@
+<template name="modal">
+  <div class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h4 class="modal-title">{{title}}</h4>
+        </div>
+
+        <div class="modal-body">
+          <p>{{count}}公斤 X {{price}}元(单价) = </p>
+          <p class="price"><span>{{result}}</span>元</p>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</template>

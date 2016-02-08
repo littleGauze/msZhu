@@ -1,0 +1,27 @@
+<template name="footers">
+  <nav class="navbar navbar-default navbar-fixed-bottom" id="pager">
+    <div class="btn-group col-xs-12 col-sm-12 col-md-12 clearfix" role="group">
+      <div class="bottom-div {{isActive 'home'}}" id="home">
+        <span class="glyphicon glyphicon-home"></span><br>
+          <span class="homeFont">首页</span>
+      </div>
+      <div class="bottom-div {{isActive 'category'}}" id="category">
+        <span class="glyphicon glyphicon-th-list"></span><br>
+          <span class="searchFont">分类</span>
+      </div>
+      <div class="bottom-div" id="add">
+        <span class="add-wrap">
+          <span class="glyphicon glyphicon-plus"></span><br>
+        </span>
+      </div>
+      <div class="bottom-div {{isActive 'statistics'}}" id="statistics">
+        <span class="glyphicon glyphicon-stats"></span><br>
+        <span class="hangerFont">统计</span>
+      </div>
+      <div class="bottom-div {{isActive 'about'}}" id="about">
+        <span class="glyphicon glyphicon-question-sign"></span><br>
+        <span class="personFont">关于</span>
+      </div>
+    </div>
+  </nav>
+</template>
