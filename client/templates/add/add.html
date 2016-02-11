@@ -1,16 +1,19 @@
 <template name="add">
   <div id="add-container">
-    {{> goBack text='添加商品'}}
+    {{> goBack text=text}}
     <div class="container">
       <form class="form">
-        <h3>上传图片</h3>
-        {{> upload_bootstrap contentType='images' multiple=false callbacks=myCallbacks }}
+        {{#if info.url}}
+        {{else}}
+          <h3>上传图片</h3>
+          {{> upload_bootstrap contentType='images' multiple=false callbacks=myCallbacks }}
+        {{/if}}
         <div class="img-wrap">
           <img src="{{uploadImg}}" alt=""/>
         </div>
         <div class="form-group">
           <label for="name">商品名字：</label>
-          <input class="form-control" type="text" name="name" placeholder="请输入商品名字"/>
+          <input class="form-control" type="text" name="name" placeholder="请输入商品名字" value="{{info.itemName}}"/>
         </div>
         <div class="form-group">
           <label for="category">分类：</label>
@@ -23,7 +26,7 @@
         </div>
         <div class="form-group">
           <label for="price">单价/每公斤：</label>
-          <input class="form-control" type="number" name="price"/>
+          <input class="form-control" type="number" name="price" value="{{info.price}}"/>
         </div>
         <div class="form-group">
           <button type="submit" class="btn btn-primary form-control">确认</button>

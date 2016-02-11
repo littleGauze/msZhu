@@ -25,5 +25,19 @@ Template.item.events({
         });
 
         $target.prev().val('');
+    },
+    'click a.edit': function (evt, temp) {
+        evt.preventDefault();
+        var id = $(evt.currentTarget).attr('data-id');
+        if (id) {
+            Router.go('add', {}, {query: 'id=' + id});
+        }
+    },
+    'click a.delete': function (evt, temp) {
+        evt.preventDefault();
+        var id = $(evt.currentTarget).attr('data-id');
+        if (id && confirm('您确定要删除该商品吗？')) {
+            Images.remove({_id: id});
+        }
     }
 });

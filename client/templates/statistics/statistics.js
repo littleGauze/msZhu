@@ -14,7 +14,6 @@ Template.statistics.onCreated(function () {
             console.log(err);
             return;
         }
-        console.log(res);
         stat.set(res.map(function (doc) {
             return {
                 month: doc._id.month,

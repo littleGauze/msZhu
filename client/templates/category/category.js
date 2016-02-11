@@ -3,29 +3,32 @@
  */
 'use strict'
 
+var baseIp = Meteor.settings.public.baseIp,
+    rootUrl = 'http://' + baseIp + ':3000';
+
 Template.category.helpers({
     categorys: function () {
         return [{
             url: Meteor.absoluteUrl('', {
-                rootUrl: 'http://192.168.1.116:3000'
+                rootUrl: rootUrl
             }) + '/vegetable.jpg',
             name: 'vegetable',
             label: '蔬菜'
         }, {
             url: Meteor.absoluteUrl('', {
-                rootUrl: 'http://192.168.1.116:3000'
+                rootUrl: rootUrl
             }) + '/fruit.jpg',
             name: 'fruit',
             label: '水果'
         }, {
             url: Meteor.absoluteUrl('', {
-                rootUrl: 'http://192.168.1.116:3000'
+                rootUrl: rootUrl
             }) + '/drinks.jpg',
             name: 'drinks',
             label: '酒水'
         }, {
             url: Meteor.absoluteUrl('', {
-                rootUrl: 'http://192.168.1.116:3000'
+                rootUrl: rootUrl
             }) + '/others.jpg',
             name: "others",
             label: '百货'

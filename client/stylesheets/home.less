@@ -2,6 +2,25 @@
 #category-list {
   padding: 5rem 1rem;
   overflow: hidden;
+  .thumbnail {
+    position: relative;
+    header {
+      position: absolute;
+      left: 0;
+      right: 10px;
+      top: 10px;
+      font-size: 30px;
+      a {
+        float: right;
+        text-decoration: none;
+        color: #999;
+        margin-left: 10px;
+        &.delete {
+          color: #f55;
+        }
+      }
+    }
+  }
   .caption {
     border-top: 1px solid #ccc;
     margin-top: 10px;

@@ -1,5 +1,9 @@
 <template name="item">
   <div class="thumbnail">
+    <header>
+      <a data-id="{{_id}}" class="delete" href="#"><i class="glyphicon glyphicon-trash"></i></a>
+      <a data-id="{{_id}}" class="edit" href="#"><i class="glyphicon glyphicon-edit"></i></a>
+    </header>
     <img src="{{url}}" alt="...">
     <div class="caption">
       <h3>{{itemName}} <p class="price"><span>{{price}}</span>元/公斤</p></h3>

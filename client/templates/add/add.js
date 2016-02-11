@@ -5,14 +5,33 @@
 
 var imgSrc,
     currentId,
-    baseIp = '192.168.1.116';
+    baseIp = Meteor.settings.public.baseIp,
+    info;
 
 Template.add.onCreated(function () {
     imgSrc = new ReactiveVar('');
     currentId = new ReactiveVar('');
+    info = new ReactiveVar({});
+    if (this.data.id) {
+        info.set(Images.findOne(this.data.id) || {});
+        currentId.set(info.get()._id);
+    }
+});
+
+Template.add.onRendered(function () {
+    var category = info.get().category;
+    if (category) {
+        this.$("select").val(category);
+    }
 });
 
 Template.add.helpers({
+    text: function () {
+        return info.get().url ? '编辑商品' : '添加商品';
+    },
+    info: function () {
+        return info.get();
+    },
     myCallbacks: {
         formData: function () {
             return {
@@ -26,13 +45,12 @@ Template.add.helpers({
             fileInfo.url = fileInfo.url.replace('localhost', baseIp);
             var id = Images.insert(fileInfo);
             if (id) {
-                console.log(id);
                 currentId.set(id);
             }
         }
     },
     uploadImg: function () {
-        return imgSrc.get();
+        return info.get().url || imgSrc.get();
     }
 });
 
@@ -54,13 +72,12 @@ Template.add.events({
             });
 
             if (res) {
-                sAlert.info('保存成功!');
+                sAlert.info('操作成功!');
                 setTimeout(function () {
                     Router.go('/');
                     form.reset();
                 }, 1000);
             }
         }
-        sAlert.info('请先上传图片!');
     }
 });
