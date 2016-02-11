@@ -2,6 +2,7 @@
   {{> title text='统计'}}
   <div id="stat-container" class="container">
     <ul class="list-group">
+      <li id="clear-stat" class="list-group-item"> 清空统计记录</li>
       {{#each statistics}}
         <li class="list-group-item"> <span>{{month}} </span>月毛收入：<strong>{{result}}</strong> 元</li>
       {{/each}}

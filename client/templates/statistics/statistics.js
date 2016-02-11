@@ -30,3 +30,14 @@ Template.statistics.helpers({
         return stat.get();
     }
 });
+
+Template.statistics.events({
+    'click #clear-stat': function (evt, temp) {
+        evt.preventDefault();
+        if (confirm('您确定要清空所有的统计数据吗？')) {
+            Meteor.call('clearStat', function (err, res) {
+                window.location.reload();
+            });
+        }
+    }
+});

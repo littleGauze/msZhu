@@ -32,5 +32,8 @@ Meteor.methods({
             }
         });
         return result;
+    },
+    clearStat: function () {
+        return Orders.remove({});
     }
 });

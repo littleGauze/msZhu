@@ -18,15 +18,17 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 
 autopublish             # Publish all data to the clients (for prototyping)
 insecure                # Allow all DB writes from clients (for prototyping)
-twbs:bootstrap
-iron:router
-sacha:spin
+
+random
 less
 reactive-var
-random
+iron:router
+twbs:bootstrap
+sacha:spin
 juliancwirko:s-alert
 juliancwirko:s-alert-jelly
 tomi:upload-server
 tomi:upload-jquery
 peppelg:bootstrap-3-modal
 meteorhacks:aggregate
+
