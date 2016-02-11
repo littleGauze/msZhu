@@ -18,9 +18,12 @@ Template.item.events({
             itemId: this._id,
             item: this.itemName,
             title: '计算结果',
-            count: count,
-            price: price,
-            result: (count * price).toFixed(2)
+            count: parseFloat(count),
+            price: parseFloat(price),
+            result: parseFloat((count * price).toFixed(2)),
+            createdAt: new Date()
         });
+
+        $target.prev().val('');
     }
 });

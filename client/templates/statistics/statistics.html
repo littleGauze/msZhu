@@ -1,3 +1,10 @@
 <template name="statistics">
   {{> title text='统计'}}
+  <div id="stat-container" class="container">
+    <ul class="list-group">
+      {{#each statistics}}
+        <li class="list-group-item"> <span>{{month}} </span>月毛收入：<strong>{{result}}</strong> 元</li>
+      {{/each}}
+    </ul>
+  </div>
 </template>

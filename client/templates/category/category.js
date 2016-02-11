@@ -6,19 +6,27 @@
 Template.category.helpers({
     categorys: function () {
         return [{
-            url: Meteor.absoluteUrl() + '/vegetable.jpg',
+            url: Meteor.absoluteUrl('', {
+                rootUrl: 'http://192.168.1.116:3000'
+            }) + '/vegetable.jpg',
             name: 'vegetable',
             label: '蔬菜'
         }, {
-            url: Meteor.absoluteUrl() + '/fruit.jpg',
+            url: Meteor.absoluteUrl('', {
+                rootUrl: 'http://192.168.1.116:3000'
+            }) + '/fruit.jpg',
             name: 'fruit',
             label: '水果'
         }, {
-            url: Meteor.absoluteUrl() + '/drinks.jpg',
+            url: Meteor.absoluteUrl('', {
+                rootUrl: 'http://192.168.1.116:3000'
+            }) + '/drinks.jpg',
             name: 'drinks',
             label: '酒水'
         }, {
-            url: Meteor.absoluteUrl() + '/others.jpg',
+            url: Meteor.absoluteUrl('', {
+                rootUrl: 'http://192.168.1.116:3000'
+            }) + '/others.jpg',
             name: "others",
             label: '百货'
         }];

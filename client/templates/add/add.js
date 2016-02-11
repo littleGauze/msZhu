@@ -4,7 +4,8 @@
 'use strict'
 
 var imgSrc,
-    currentId;
+    currentId,
+    baseIp = '192.168.1.116';
 
 Template.add.onCreated(function () {
     imgSrc = new ReactiveVar('');
@@ -21,6 +22,8 @@ Template.add.helpers({
         },
         finished: function (index, fileInfo, context) {
             imgSrc.set(fileInfo.url);
+            fileInfo.baseUrl = fileInfo.baseUrl.replace('localhost', baseIp);
+            fileInfo.url = fileInfo.url.replace('localhost', baseIp);
             var id = Images.insert(fileInfo);
             if (id) {
                 console.log(id);
